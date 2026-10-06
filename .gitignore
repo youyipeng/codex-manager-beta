@@ -1,0 +1,9 @@
+*.zip
+*.patch
+*.log
+auth.json
+.env*
+node_modules/
+runtime/
+state/
+prospects/

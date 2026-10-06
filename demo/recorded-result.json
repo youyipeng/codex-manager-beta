@@ -1,0 +1,102 @@
+{
+  "kind": "sanitized summary of a recorded internal run",
+  "recorded_date": "2026-10-05",
+  "version_scope": "Stage 5.1; not a newly recorded External Beta run",
+  "status": "completed",
+  "iterations": 2,
+  "rounds": [
+    {
+      "iteration": 1,
+      "tests_passed": 30,
+      "tests_total": 31,
+      "manager_verdict": "revise",
+      "repair_reason": "Leading/trailing ASCII-space handling did not meet the fixed input contract"
+    },
+    {
+      "iteration": 2,
+      "tests_passed": 31,
+      "tests_total": 31,
+      "manager_verdict": "accept"
+    }
+  ],
+  "verification": [
+    {
+      "iteration": 1,
+      "id": "lint",
+      "passed": true,
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 7095
+    },
+    {
+      "iteration": 1,
+      "id": "typecheck",
+      "passed": true,
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 807
+    },
+    {
+      "iteration": 1,
+      "id": "build",
+      "passed": true,
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 519
+    },
+    {
+      "iteration": 1,
+      "id": "test",
+      "passed": false,
+      "exitCode": 1,
+      "timedOut": false,
+      "durationMs": 110
+    },
+    {
+      "iteration": 2,
+      "id": "lint",
+      "passed": true,
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 1094
+    },
+    {
+      "iteration": 2,
+      "id": "typecheck",
+      "passed": true,
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 516
+    },
+    {
+      "iteration": 2,
+      "id": "build",
+      "passed": true,
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 522
+    },
+    {
+      "iteration": 2,
+      "id": "test",
+      "passed": true,
+      "exitCode": 0,
+      "timedOut": false,
+      "durationMs": 122
+    }
+  ],
+  "original_repo_unchanged": true,
+  "delivery": "patch and evidence; no automatic merge or push",
+  "external_customer_trial": false,
+  "beta_installation_demo": {
+    "version": "0.1.0-beta",
+    "tests_passed": 16,
+    "tests_total": 16,
+    "iterations": 1
+  },
+  "limitations": [
+    "The test count is limited to this task",
+    "Separate review can use the same model",
+    "No external customer or measured time savings"
+  ]
+}
