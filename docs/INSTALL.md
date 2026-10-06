@@ -1,34 +1,35 @@
-# Apply, install, and run one task
+# Install, see a checked result, then try your task
 
-Version: 0.1.0-beta. Free private beta; no payment signup. The runtime is distributed privately after checking eligibility.
+**Free Windows private beta · runtime 0.1.0-beta · onboarding kit revision 1**
 
-## Eligibility
+## Check your fit before downloading
 
-Windows x64 with PowerShell 5.1, Node.js >=22.18 and Git for Windows installed. You need a Desktop Work host with local stdio MCP and plugin support, and Codex CLI already signed in with available quota. Windows 11, Codex CLI 0.160.0 and Store host OpenAI.Codex 26.930.4958.0 were used internally. Capability checks run during installation. Web/mobile ChatGPT and desktops lacking local MCP/plugin support are outside this beta.
+Windows x64, PowerShell 5.1, Node >=22.18, Git, a local Work Desktop host supporting stdio MCP and plugins, and a signed-in Codex CLI with available quota. Web/mobile ChatGPT and remote-connector-only hosts cannot run this package. Windows 11 x64 with Codex CLI 0.160.0 was tested internally. Allow approximately 500 MB free space. Fresh machines/accounts, Windows 10 and cold reboot remain unverified. Scripts are unsigned.
 
-Allow about 500 MB free space. Fresh machines/accounts, Windows 10 and reboot/cold start remain unverified. Scripts are unsigned.
+[Request the installation kit](mailto:yipengyou72@gmail.com?subject=Codex%20Manager%20Windows%20Beta&body=Windows%20version%3A%20%0ALocal%20Desktop%20Work%20and%20MCP%2Fplugin%20support%3A%20%0ACodex%20signed%20in%3A%20%0ASmall%20task%20%28no%20source%20or%20secrets%29%3A%20) with your setup and a small task. Do not attach source or tokens. We send the ZIP, its own SHA256.txt and instructions after confirming fit. No payment signup.
 
-## Request the private kit
+## Short first-success path
 
-[Email the founder](mailto:yipengyou72@gmail.com?subject=Codex%20Manager%20Windows%20Beta) with your setup and a small task. Do not send source, passwords or tokens. The reply provides the ZIP, SHA256.txt and instructions.
+1. Verify the received ZIP against its accompanying SHA256.txt and extract it completely.
+2. Open START.cmd.
+3. Read and approve **Install and run demo** on the local page.
 
-The approved 0.1.0-beta Windows ZIP has SHA-256:
+The page automates prerequisite detection, installation, plugin/MCP registration, authorization of the known demo, natural-language task submission, polling, evidence checks and result display. It shows job ID, final checks, separate review and an accepted patch download. It does not alter your original repo. Reopen START.cmd to resume the saved request/job after a connection problem; completed evidence is shown without a new task.
 
-`9365ce13b104908dc2559cb0de8676b4e3b9d2012908adfd1dcf7a675851a183`
+**This launcher demo uses the same MCP tools outside a ChatGPT chat.** For the actual ChatGPT conversational experience, open a new local Work chat, select the Beta plugin if needed and send the task provided on the page. Those additional actions are counted separately. Five minutes is a target, not a promise; model work and separate review can take longer. See [measured results](ONBOARDING-RESULTS.md).
 
-## Install
+The original INSTALL.cmd/DEMO.cmd route remains available. The onboarding ZIP has a different checksum from the original 0.1.0-beta ZIP despite using the identical Manager runtime. Use the checksum provided with the kit you received.
 
-1. Verify the received ZIP against its checksum, then extract the whole archive.
-2. Run INSTALL.cmd. It checks dependencies and registers this beta's local plugin/MCP.
-3. Open a new local Work chat and select Codex Manager External Beta. Refresh/restart the host if requested.
-4. Use the bundled DEMO-TASK.txt, then inspect the returned patch and check/review evidence.
+## First real task
 
-STATUS.cmd checks setup; REPAIR.cmd repairs this beta's registration. UNINSTALL.cmd removes its services/registration while retaining results and backups. Read the ZIP README for exact authorization and lifecycle behavior.
+Pick one trusted non-production Git repo with a commit, clean working tree and prepared dependencies. Agree on a small task with existing checks and exact editable source files. Explicitly authorize its exact root using AUTHORIZE.ps1; acknowledge trusted local execution. ChatGPT may prepare the command, but cannot infer consent to access a new repo. Keep tests/configuration protected. Never use production credentials, customer records, payment operations or a deployment as the first task.
 
-## The measured real-repo trial
+Describe the task in the new local Work chat. Keep the job ID, patch and evidence. Let ChatGPT handle normal polling and bounded repair. Escalated/failed is an outcome, not a pass. Review before separately applying any patch.
 
-Choose a trusted, non-production Git repo with a commit, clean working tree and prepared dependencies. Fix the expected behavior, trusted checks and allowed source files before coding. Use the supplied AUTHORIZE.ps1 to authorize the exact root and files; keep tests/configuration protected. Do not use production access, credentials, customer records, trading actions or payment operations in the trial.
+## Record feedback without a cloud service
 
-Give the requirement in your local Work chat. Keep the job ID, patch and evidence. After a connection drop, inspect that job rather than submitting a duplicate. Review the patch yourself before any separate application.
+Open FEEDBACK.cmd or START.cmd. The local form records install time, actual stages and extra actions, install/demo outcome, first real task outcome, estimated minutes saved, friction, desired features, continued-use intent and $19/$29/$49 monthly feedback. Unknown customer answers remain null. It writes JSON and Markdown under <InstallRoot>/state/trial; export/share only if you choose. The demo is never counted as a customer task. No payments are processed.
 
-Measure dependency/login/download time separately from installation, and active supervision/review time separately from elapsed model time. Failure and escalation count as outcomes. There is no remote-control service implied by the invitation.
+## Recovery
+
+Missing dependency/login: follow the installer message, then reopen START. A registration conflict is preserved rather than overwritten. STATUS.cmd checks setup; REPAIR.cmd repairs owned registration; UNINSTALL.cmd removes this beta's startup/registrations while retaining evidence and repositories. Do not overwrite your whole host config. For an active task, wait/cancel before lifecycle changes. [FAQ](FAQ.md) · [Privacy and safety](PRIVACY.md).

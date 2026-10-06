@@ -1,16 +1,16 @@
-# 45-second demo recording plan
+# 45-second demo script and storyboard
 
-Status: script complete; video not recorded. Use the existing Stage 5.1 evidence, or a separately labeled fresh run. Do not present this as a beta user result.
+Use the real Stage 5.1 evidence only. Internal recording, October 5, 2026. UI/log highlights may be assembled from genuine artifacts; label “recorded internal evidence, edited for length.” Do not stage a new failure, fabricate screens or display prospect/private-repo details. The beta installer demo is a different 16-test execution. No video is claimed to exist yet.
 
-| Time | Screen | Narration / caption |
+| Time | Visual | English narration / on-screen text |
 |---|---|---|
-| 0–5s | Clean title, then the actual task input | “I stopped babysitting Codex on this small task. I gave ChatGPT Manager one requirement.” |
-| 5–12s | Actual request and allowed scope | “The checks were fixed before coding. Codex worked on a local copy.” |
-| 12–21s | First-round recorded checks: lint/typecheck/build pass, test exit 1, 30/31 | “The first attempt looked finished. One test still failed.” |
-| 21–29s | Recorded Manager reject and repair feedback | “ChatGPT's Manager rejected the first attempt and sent Codex back to fix it.” |
-| 29–37s | Second-round checks, 31/31, accept | “The next round passed 31 out of 31, plus lint, typecheck and build.” |
-| 37–45s | Patch result, then CTA | “I got a patch and the evidence. Windows private beta: try one small repo task for free.” |
+| 0–5s | One genuine natural-language duration-parser request; show only the requested behavior | “I gave ChatGPT one small task and fixed the acceptance checks first.” |
+| 5–12s | Round-one trusted test output: 30 pass / 1 fail; show lint/typecheck/build pass briefly | “Codex said it was done. One test disagreed: leading and trailing ASCII spaces.” |
+| 12–20s | Actual round-one review verdict `revise`, highlighted reason, repair request | “The Manager rejected the attempt and sent the specific failure back to Codex.” |
+| 20–28s | Round-two work/check evidence; simple crossfade, visibly edited time gap | “Codex repaired the implementation. The checks ran again.” |
+| 28–36s | Actual 31/31 final check output, accept review, changed implementation file and clean original | “All 31 tests passed, and a separate review accepted the patch. The original repo stayed unchanged.” |
+| 36–45s | Quiet end card: Windows Beta, local files / cloud model context; public URL | “This is one internal run, not a reliability benchmark. Windows beta, up to three attempts. Code context still goes to the model service. Evidence and installation details are linked.” |
 
-Persistent small label: “Internal Stage 5.1 run · recorded Oct 5, 2026 · edited for time”. End-card note: “Beta installer demo separately passed 16/16. Local execution; model context goes to the service. Up to 3 iterations.”
+End card: Give ChatGPT the task. Let it manage Codex until tests pass. Small footer: Goal, not guarantee. Internal Stage 5.1 evidence; beta demo separately 16/16. Request installation: github.com/youyipeng/codex-manager-beta.
 
-Crop or hide local paths, sidebar chats, account details, repo secrets and unrelated tabs. Do not alter test counts, fabricate a tool result, or splice different runs into one apparent job. If rebuilding a screen from evidence, label it “evidence walkthrough”, not “live recording”. Use cuts to shorten waiting; mark time compression. Do not claim measured productivity savings.
+Record/crop at 1920×1080 or 1080×1920 with readable highlighted log excerpts. No invented savings, countdown implying 45-second task completion, payment claims, or unlabeled reenactment. Redact user paths, SID, tokens, background desktop/chat content and unrelated source. Keep original artifacts archived; screenshots/log excerpts need per-frame privacy review before posting. The raw evidence remains private; this public repository contains only a sanitized recorded summary.

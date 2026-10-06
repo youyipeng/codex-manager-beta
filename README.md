@@ -1,79 +1,49 @@
-# Codex Manager — Windows private beta
+# Codex Manager — Windows Beta
 
 **Give ChatGPT the task. Let it manage Codex until tests pass.**
 
-A local-first manager for one bounded repo task: describe the requirement in ChatGPT Manager, let Codex implement it in a local work copy, and get a patch with acceptance-check and review evidence. Failed checks trigger bounded repairs. The beta stops after its configured limit; the headline is a goal, not a guarantee.
+Hand off one small repo task from a local ChatGPT Work chat to Codex. The local Manager fixes the editable scope and checks, verifies the result separately, requests bounded repairs, and returns a patch with evidence. Up to three attempts; success is not guaranteed.
 
-**Free private beta: 0.1.0-beta · Windows x64 · one task at a time · up to three iterations.**
+**Windows x64 · local-first · free private beta · runtime 0.1.0-beta**
 
-[Apply for a free repo trial](mailto:yipengyou72@gmail.com?subject=Codex%20Manager%20Windows%20Beta) · [Installation and eligibility](docs/INSTALL.md) · [Privacy](docs/PRIVACY.md)
+[Landing page](https://youyipeng.github.io/codex-manager-beta/) · [Request the installation kit](mailto:yipengyou72@gmail.com?subject=Codex%20Manager%20Windows%20Beta&body=Windows%20version%3A%20%0ALocal%20Desktop%20Work%20and%20MCP%2Fplugin%20support%3A%20%0ACodex%20signed%20in%3A%20%0ASmall%20task%20%28no%20source%20or%20secrets%29%3A%20) · [Install and first task](docs/INSTALL.md) · [Privacy and safety](docs/PRIVACY.md) · [FAQ](docs/FAQ.md)
 
-## The actual repair loop
+Send your Windows setup, local Work/MCP/plugin availability, Codex sign-in status and a small task description. Do not send source or credentials. Compatible users receive the private ZIP and checksum. No checkout or payment signup.
 
-In an internal Desktop end-to-end run on October 5, 2026:
+## A real failed attempt, followed by repair
 
-1. A single natural-language request asked for a duration-parser implementation.
-2. Codex's first attempt passed lint, typecheck and build, but passed only **30/31 tests**.
-3. Manager rejected that attempt and requested a repair for leading/trailing ASCII spaces.
-4. Codex repaired the implementation. The second attempt passed **31/31 tests**, with lint/typecheck/build also passing and a separate review accepting the result.
-5. The result was a patch. The original repo remained unchanged.
+An internal Desktop run on October 5, 2026 began with one natural-language request for a duration parser:
 
-[Sanitized result](demo/recorded-result.json) · [45-second recording script](demo/RECORDING-SCRIPT.md) · [Evidence scope](docs/EVIDENCE.md)
+**First attempt: 30/31 → Manager rejects and requests repair → Codex repairs → 31/31, separate review accepts.**
 
-This 31-test example was recorded on Stage 5.1 before External Beta packaging. The beta's separate installation demo passed **16/16** in one iteration. These are internal checks, not external customer trials, and neither proves general reliability or time saved. No demo video has been recorded for this public page yet.
+Lint, typecheck and build also passed. The failed case concerned leading/trailing ASCII spaces. The original repo stayed unchanged; the result was a patch. [Sanitized recorded result](demo/recorded-result.json) · [Evidence scope](docs/EVIDENCE.md) · [45-second demo plan](demo/RECORDING-SCRIPT.md).
 
-## How it fits
+This sequence was recorded on **Stage 5.1**, before beta packaging. The separately packaged External Beta demo passed **16/16 in one round**. Neither is an external customer success or a general reliability/productivity benchmark. The review is a separate call and can use the same model. A video has not yet been recorded.
 
-```mermaid
-flowchart LR
-  U[Your requirement in ChatGPT Manager] --> M[Local Manager]
-  M --> C[Codex in a local work copy]
-  C --> V[Frozen acceptance checks and separate review]
-  V -->|reject, within limit| C
-  V -->|accept| P[Patch and evidence for your review]
-  V -->|limit reached| E[Failure or escalation with evidence]
-```
+## Get to a checked result with less setup
 
-The coding agent's completion message is a claim. The Manager runs the registered checks outside the coding step and uses their results to decide what happens next. A green test suite still only verifies what those tests cover.
+The new private onboarding kit automates dependency checks, registration, demo authorization, submission, polling and evidence display. Extract → open START.cmd → approve the displayed demo. It also collects local JSON/Markdown feedback.
 
-## Try it on one real task
+The three-stage shortcut runs through the beta MCP **outside a ChatGPT chat**. To experience the conversational handoff, open a new local Work chat, select the plugin if your host requires it, and send the provided task. Those steps are additional. Five minutes is a target, not a guarantee. [Measured onboarding results](docs/ONBOARDING-RESULTS.md).
 
-Email **yipengyou72@gmail.com** with:
+Required: Windows x64, PowerShell 5.1, Node >=22.18, Git, a local stdio-MCP/plugin-capable Desktop Work host, signed-in Codex with quota. Web/mobile and remote-only connector hosts are unsupported. No new API key is requested by the tested login path; model access and usage remain separate.
 
-- Your Windows version and whether your Desktop Work host supports **local stdio MCP and plugins**.
-- Whether Codex CLI is already signed in and has model quota.
-- One small repo task and the checks that would prove it is done.
+## Where your code goes
 
-Do not email your repo, credentials or private source. We first check setup, then send the private ZIP, checksum and installation notes. Run the bundled demo, then explicitly authorize a low-risk repo and allowed files. The trial is free; your existing model access is separate. No payment signup is required.
+Repo files, work copies, patches and evidence stay on your PC. **Authorized code context, prompts and check output are sent to your signed-in model service.** ChatGPT processes your conversation. This is not fully offline or zero cloud exposure. The onboarding feedback has no added cloud service or automatic upload.
 
-## Local-first, with a clear privacy boundary
+Real repos require exact-path/file authorization and trusted local checks. The demo authorizes only its known sample. Local checks execute project code as your Windows user; a work copy is not an OS sandbox. No automatic merge, push, deployment or payment. [Full privacy and safety boundaries](docs/PRIVACY.md).
 
-Repo copies, patches and local records stay on your machine. Required source context, instructions and check output are sent to the model service through your signed-in Codex account. This is **local execution, not offline AI**. Local checks execute project code; a work copy is not an operating-system sandbox. You decide what scope to authorize and what non-sensitive feedback to share.
+## What this beta can and cannot replace
 
-## Known limits
+[Cursor](https://cursor.com/docs), [Devin](https://docs.devin.ai/essential-guidelines/when-to-use-devin) and [Factory Droid](https://docs.factory.com/droid-cli/overview) already offer coding-agent, review and automation workflows. We have no head-to-head benchmark or superiority claim. This experiment focuses on ChatGPT managing Codex in one authorized local Windows work copy, with frozen checks and a returned patch. It is not a replacement editor or a broad hosted agent platform. Existing hooks/CI may already solve your problem. [Honest comparison and FAQ](docs/FAQ.md).
 
-- Windows-only beta. Windows 11 has been tested; Windows 10, fresh Windows users/VMs, fresh model accounts and reboot/cold start are unverified.
-- Requires PowerShell 5.1, Node.js >=22.18, Git for Windows, signed-in Codex CLI and a Desktop Work host supporting local MCP/plugins. Ordinary web/mobile ChatGPT and desktop hosts without these capabilities cannot run this package.
-- The tested Store host is OpenAI.Codex 26.930.4958.0, with a ChatGPT.exe UI process. Eligibility depends on host capabilities, not the product name alone.
-- Unsigned scripts. Dependency setup, login and OS prompts may require manual action.
-- One active task; up to three total implementation iterations. Escalation is a valid outcome.
-- A narrow set of registered project checks; complex monorepos and Docker runners have not been verified.
-- Development and separate review can use the same model. Review is not an independent human audit.
-- No automatic patch application to the original repo, merge, push, deployment or payment handling.
-- No measured external-user installation rate, time savings or willingness to pay yet.
+## Current limits
 
-## Cursor, Devin and Factory
+- Windows 11 x64 tested; fresh machines/users, Windows 10, macOS/Linux and cold reboot unverified.
+- One active task, at most three attempts, limited supported check syntax; complex monorepos and arbitrary providers unverified.
+- Unsigned scripts; prerequisites and sign-in are still required. Model quota/network/review delays may exceed five minutes.
+- No guaranteed success, automatic application to source, checkout, paid plan or supported payment flow.
+- No completed external customer trial, measured customer time saved or validated pricing yet. $19/$29/$49 are research questions.
 
-Those tools already offer agent workflows and verification features. We have no head-to-head benchmark and make no superiority claim.
-
-| Tool | Its documented focus | What this beta adds or limits |
-|---|---|---|
-| [Cursor](https://cursor.com/docs) | Coding, planning, debugging, review and workflow integrations | A specific ChatGPT-to-Codex handoff with registered checks and bounded repairs. This beta is not an editor or Cursor integration. |
-| [Devin](https://docs.devin.ai/essential-guidelines/when-to-use-devin) | Delegated engineering tasks in a configured development environment | Our measured scope is one authorized local Windows repo copy and a returned patch; no hosted task fleet or automatic deployment. |
-| [Factory Droid](https://docs.factory.com/droid-cli/overview) | A coding agent available through its CLI and connected workflows | This beta manages Codex only; it is not a multi-provider agent platform. |
-
-A developer who already has reliable hooks, CI and review automation may get little additional value. That is what the real-repo trial should measure.
-
-## What is public here
-
-Documentation, a sanitized recorded outcome, architecture and a demo recording plan. The Manager implementation, private beta runtime and commercial source are not open-sourced by this repository. Codex Manager is an independent beta and is not an official OpenAI product.
+Public: documentation and sanitized internal evidence. Private: commercial core/runtime, raw traces, prospect records and credentials. This independent beta is not an official OpenAI product.
