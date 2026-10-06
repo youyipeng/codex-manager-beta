@@ -1,6 +1,6 @@
 # Install, see a checked result, then try your task
 
-**Free Windows private beta · runtime 0.1.0-beta · onboarding kit revision 1**
+**Free Windows private beta · runtime 0.1.0-beta · onboarding kit revision 2**
 
 ## Check your fit before downloading
 
@@ -10,15 +10,20 @@ Windows x64, PowerShell 5.1, Node >=22.18, Git, a local Work Desktop host suppor
 
 ## Short first-success path
 
-1. Verify the received ZIP against its accompanying SHA256.txt and extract it completely.
-2. Open START.cmd.
-3. Read and approve **Install and run demo** on the local page.
+Download, verify the ZIP checksum and extract it completely. Then:
 
-The page automates prerequisite detection, installation, plugin/MCP registration, authorization of the known demo, natural-language task submission, polling, evidence checks and result display. It shows job ID, final checks, separate review and an accepted patch download. It does not alter your original repo. Reopen START.cmd to resume the saved request/job after a connection problem; completed evidence is shown without a new task.
+1. Open **START.cmd**.
+2. Click **OK** in the first-run consent window.
 
-**This launcher demo uses the same MCP tools outside a ChatGPT chat.** For the actual ChatGPT conversational experience, open a new local Work chat, select the Beta plugin if needed and send the task provided on the page. Those additional actions are counted separately. Five minutes is a target, not a promise; model work and separate review can take longer. See [measured results](ONBOARDING-RESULTS.md).
+No extra start button on the local page is required. Missing Node/Git are downloaded from official releases, verified against pinned SHA-256 hashes, and kept inside this installation; system PATH is not changed. Desktop, sign-in and model quota are prerequisites. Registration, demo creation/limited authorization, the displayed natural-language task, polling and result display are automatic. Original repositories are unchanged.
 
-The original INSTALL.cmd/DEMO.cmd route remains available. The onboarding ZIP has a different checksum from the original 0.1.0-beta ZIP despite using the identical Manager runtime. Use the checksum provided with the kit you received.
+**Two actions means after extraction.** Download, extraction, Windows warnings, login and protocol confirmations count additionally when present. Automated tests do not observe a stranger's actions or waiting time. Use the checksum supplied with this revision.
+
+The result page contains **Open prepared ChatGPT task**, also saved as OPEN-CHATGPT.cmd. It preloads the Beta plugin and existing demo job. The Desktop user sends the draft; switching to Work may also be needed. This retrieves the same launcher result, without another demo. It does not validate a complete new-task ChatGPT handoff. [Official launch-link behavior](https://learn.chatgpt.com/docs/app/commands#deep-links).
+
+Reopen START to resume the saved request/job. Completed results are displayed without another model call. Initial failure runs STATUS / REPAIR / STATUS and writes DIAGNOSIS.txt. Changed authorization, a damaged package or another installation's registration never gets silently overwritten.
+
+The core/runtime and frozen demo checks are unchanged. An installation-only adapter configures HTTPS for Codex exec against the official endpoint with the same signed-in account, default model and original restrictions. [Actual internal measurements](ONBOARDING-RESULTS.md) describe measured and unmeasured costs; they are not a universal five-minute promise.
 
 ## First real task
 

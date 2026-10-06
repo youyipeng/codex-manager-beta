@@ -22,11 +22,15 @@ This sequence was recorded on **Stage 5.1**, before beta packaging. The separate
 
 ## Get to a checked result with less setup
 
-The new private onboarding kit automates dependency checks, registration, demo authorization, submission, polling and evidence display. Extract → open START.cmd → approve the displayed demo. It also collects local JSON/Markdown feedback.
+**Measured October 6:** extraction to checked local result was **1:43** with dependencies present and **2:59** including portable Node/Git preparation; both passed 16/16 and review accepted. Initial ZIP download, human actions/login and the full Desktop conversational path are excluded. These are two internal tests, not a five-minute guarantee.
 
-The three-stage shortcut runs through the beta MCP **outside a ChatGPT chat**. To experience the conversational handoff, open a new local Work chat, select the plugin if your host requires it, and send the provided task. Those steps are additional. Five minutes is a target, not a guarantee. [Measured onboarding results](docs/ONBOARDING-RESULTS.md).
+Onboarding revision 2 requires **two actions after extraction**: open START.cmd, then approve its first-run window. Installation, verified portable Node/Git preparation when needed, plugin/MCP registration, known-demo authorization, natural-language task submission and checked-result display are automatic.
 
-Required: Windows x64, PowerShell 5.1, Node >=22.18, Git, a local stdio-MCP/plugin-capable Desktop Work host, signed-in Codex with quota. Web/mobile and remote-only connector hosts are unsupported. No new API key is requested by the tested login path; model access and usage remain separate.
+Download and extraction remain additional actions. The local launcher submits the demo through MCP. Its prepared ChatGPT link fills the plugin mention and existing job; the user sends the draft to inspect that same result. This is separate from launching a new task through ChatGPT. A stranger's full Desktop journey and click count have not been measured. [Measured results](docs/ONBOARDING-RESULTS.md).
+
+First installation failure runs STATUS → REPAIR → STATUS automatically and produces a readable diagnosis. Registration collisions and changed authorization are preserved. Only these Codex exec calls use an installation-scoped HTTPS adapter to the official endpoint; the signed-in account, model, original tool restrictions, runtime and independent review remain unchanged.
+
+Required: Windows x64, PowerShell 5.1, Node >=22.18 and Git (prepared automatically if missing), a local stdio-MCP/plugin-capable Desktop Work host, signed-in Codex with quota. Web/mobile and remote-only connector hosts are unsupported. No new API key is requested by the tested login path; model access and usage remain separate.
 
 ## Where your code goes
 
