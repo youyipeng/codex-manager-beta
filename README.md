@@ -20,6 +20,8 @@ Lint, typecheck and build also passed. The failed case concerned leading/trailin
 
 This sequence was recorded on **Stage 5.1**, before beta packaging. The separately packaged External Beta demo passed **16/16 in one round**. Neither is an external customer success or a general reliability/productivity benchmark. The review is a separate call and can use the same model. A video has not yet been recorded.
 
+[October 8 technical walkthrough and trial request](docs/duration-parser-repair-2026-10-08.md) · [80-second recording script](demo/demo-first-80s-2026-10-08.md) · [Sanitized artifact excerpts](demo/repair-evidence-2026-10-08.json). The script is prepared; no finished video is claimed.
+
 ## Get to a checked result with less setup
 
 **Measured October 6:** extraction to checked local result was **1:43** with dependencies present and **2:59** including portable Node/Git preparation; both passed 16/16 and review accepted. Initial ZIP download, human actions/login and the full Desktop conversational path are excluded. These are two internal tests, not a five-minute guarantee.
