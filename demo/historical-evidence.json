@@ -1,0 +1,252 @@
+{
+  "kind": "sanitized projection of recorded internal artifacts; not a new execution or screenshot",
+  "recorded_date": "2026-10-05",
+  "version_scope": "Stage 5.1; External Beta 0.1.0-beta has a separate one-round 16/16 demo",
+  "editable_paths": [
+    "src/duration.ts"
+  ],
+  "mandatory_checks": [
+    "lint",
+    "typecheck",
+    "build",
+    "test"
+  ],
+  "max_iterations": 3,
+  "status": "completed",
+  "iterations": 2,
+  "changed_files": [
+    "src/duration.ts"
+  ],
+  "rounds": [
+    {
+      "iteration": 1,
+      "checks": [
+        {
+          "id": "lint",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "durationMs": 7095
+        },
+        {
+          "id": "typecheck",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "durationMs": 807
+        },
+        {
+          "id": "build",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "durationMs": 519
+        },
+        {
+          "id": "test",
+          "passed": false,
+          "exitCode": 1,
+          "timedOut": false,
+          "durationMs": 110
+        }
+      ],
+      "test_output_excerpt": [
+        "✖ valid duration   2H  3M  (0.519ms)",
+        "ℹ tests 31",
+        "ℹ pass 30",
+        "ℹ fail 1",
+        "✖ valid duration   2H  3M  (0.519ms)",
+        "  null !== 7380000"
+      ],
+      "review": {
+        "verdict": "revise",
+        "summary": "实现的类型检查、完整匹配、单位去重和 BigInt 溢出防护符合要求，但未接受首尾 ASCII 空格，导致强制 test 检查失败。",
+        "criteria": [
+          {
+            "id": "input-contract",
+            "passed": false,
+            "evidence": "宿主测试表明 \"  2H  3M \" 应返回 7380000，实际返回 null；当前解析从位置 0 开始且明确拒绝尾随空格。"
+          },
+          {
+            "id": "invalid-input",
+            "passed": true,
+            "evidence": "源码完整消费输入并拒绝非法词项；宿主提供的非字符串、空输入、符号、小数、重复单位、未知字符和换行测试均通过。"
+          },
+          {
+            "id": "numeric-safety",
+            "passed": true,
+            "evidence": "源码使用 BigInt 精确累加并检查 Number.MAX_SAFE_INTEGER；零值、安全整数上界、单项及累计溢出测试通过。"
+          },
+          {
+            "id": "mandatory-validation",
+            "passed": false,
+            "evidence": "变更仅涉及 src/duration.ts；宿主 lint、typecheck、build 均通过，test 为 30 通过、1 失败，退出码 1。"
+          }
+        ],
+        "feedback": [
+          "仅在 src/duration.ts 内修正首尾 ASCII 空格处理，使 \"  2H  3M \" 返回 7380000，同时继续拒绝纯空格及换行。不要使用会去除换行等字符的通用 trim()。",
+          "修正后由宿主按 lint、typecheck、build、test 顺序重新执行全部强制检查，测试使用本轮构建输出；不得修改测试或验收配置。"
+        ],
+        "decisions": []
+      }
+    },
+    {
+      "iteration": 2,
+      "checks": [
+        {
+          "id": "lint",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "durationMs": 1094
+        },
+        {
+          "id": "typecheck",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "durationMs": 516
+        },
+        {
+          "id": "build",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "durationMs": 522
+        },
+        {
+          "id": "test",
+          "passed": true,
+          "exitCode": 0,
+          "timedOut": false,
+          "durationMs": 122
+        }
+      ],
+      "test_output_excerpt": [
+        "✔ valid duration   2H  3M  (0.0596ms)",
+        "ℹ tests 31",
+        "ℹ pass 31",
+        "ℹ fail 0"
+      ],
+      "review": {
+        "verdict": "accept",
+        "summary": "源码符合 README 功能契约，变更仅限 src/duration.ts；宿主提供的四项强制检查全部通过。",
+        "criteria": [
+          {
+            "id": "input-contract",
+            "passed": true,
+            "evidence": "先执行 NFKC 和大小写归一化，再逐项解析数字及单位；支持任意顺序、相邻词项和 ASCII 空格，Set 限制单位唯一。宿主有效输入测试通过。"
+          },
+          {
+            "id": "invalid-input",
+            "passed": true,
+            "evidence": "运行时类型检查与粘连正则确保完整消费输入，拒绝缺失单位、符号、小数、重复单位、未知字符及换行；空字符串和纯空格返回 null。宿主无效输入测试通过。"
+          },
+          {
+            "id": "numeric-safety",
+            "passed": true,
+            "evidence": "使用 BigInt 精确计算并逐项检查累计值，仅在不超过 Number.MAX_SAFE_INTEGER 时转换为 number；保留零值。宿主边界值及溢出测试通过。"
+          },
+          {
+            "id": "mandatory-validation",
+            "passed": true,
+            "evidence": "所提供差异仅修改 src/duration.ts；宿主 lint、typecheck、build、test 均退出码为 0，31 项测试全部通过。"
+          }
+        ],
+        "feedback": [],
+        "decisions": []
+      }
+    }
+  ],
+  "events": [
+    {
+      "time": "2026-10-05T10:38:59.123Z",
+      "type": "created",
+      "state": "created",
+      "iterations": 0
+    },
+    {
+      "time": "2026-10-05T10:39:01.800Z",
+      "type": "state",
+      "state": "planning",
+      "iterations": 0
+    },
+    {
+      "time": "2026-10-05T10:41:16.946Z",
+      "type": "state",
+      "state": "working",
+      "iterations": 1
+    },
+    {
+      "time": "2026-10-05T10:43:35.413Z",
+      "type": "state",
+      "state": "verifying",
+      "iterations": 1
+    },
+    {
+      "time": "2026-10-05T10:43:43.952Z",
+      "type": "state",
+      "state": "reviewing",
+      "iterations": 1
+    },
+    {
+      "time": "2026-10-05T10:45:52.962Z",
+      "type": "feedback",
+      "state": "reviewing",
+      "iterations": 1
+    },
+    {
+      "time": "2026-10-05T10:45:52.962Z",
+      "type": "state",
+      "state": "working",
+      "iterations": 2
+    },
+    {
+      "time": "2026-10-05T10:48:11.070Z",
+      "type": "state",
+      "state": "verifying",
+      "iterations": 2
+    },
+    {
+      "time": "2026-10-05T10:48:13.332Z",
+      "type": "state",
+      "state": "reviewing",
+      "iterations": 2
+    },
+    {
+      "time": "2026-10-05T10:50:20.327Z",
+      "type": "state",
+      "state": "completed",
+      "iterations": 2
+    }
+  ],
+  "recorded_created_to_completed_seconds": 681.204,
+  "duration_scope": "recorded event interval, not video length, customer active time, or installation time",
+  "external_customer_trial": false,
+  "source_integrity_statement": "Local files match the previously recorded SHA-256 inventory; hashes do not constitute third-party attestation.",
+  "implementation_line_before": "  const input = value.normalize('NFKC').toLowerCase();",
+  "implementation_line_after": "  const input = value.normalize('NFKC').toLowerCase().replace(/^ +| +$/g, '');",
+  "publication_exclusions": [
+    "raw screenshots",
+    "absolute filesystem paths",
+    "full stack traces",
+    "prospect identities",
+    "private runtime source"
+  ],
+  "source_hashes": {
+    "task-result.json": "c635c07c1f0d90af1061d8bf13ac024f864545c20d933c4aba4ab0365640e1b4",
+    "request.json": "107f3ee3b3c1ca2ef7debd9a45d4773e8473c998ea9d2a1c6c34734449129ffa",
+    "round-1-checks.json": "af9be11456daeb4c1d24ae6a01c9f96cb4e740800dc5a25a18854c04340ac6fc",
+    "round-1-review.json": "cbcc1606354a55410517e65b7b0678b9cef983abfd86646547e80ee61e0b1125",
+    "round-2-checks.json": "8744b0773678edfa74daa12dd7110e8f79461738a7f886dc9448ce96497f06a4",
+    "round-2-review.json": "c4a2a21ca738500dc4fa41086a8fd304ad236a8279fb6f4c42eb604bb4f358d6",
+    "events.jsonl": "173a4a9c563c0388d1ba960329d7ae3019baae5273e75746969898bb4e7d7eba",
+    "changes.patch": "6a68f22f3ef0fb5691dc2c690fe9006134ebe71760780110227f302453268c9d",
+    "round-1-worker.json": "6ac8b9e9fbcdb560ed0b0eaa4c7bebcf729464f7549889a5d87bacefab2e798a",
+    "round-2-worker.json": "2e5503f8529a275e466f1ae6cc1b258d8bcf448c99fe150f54c36530a236a5e3"
+  },
+  "original_prompt_excerpt": "使用 Codex Manager 本地总控，在已登记的 stage5-e2e（时长工具）仓库实现 parseDuration(value)，严格遵循仓库 README 的完整功能契约，通过所有已识别并登记的验收命令。",
+  "first_worker_summary": "实现 parseDuration，按 README 契约完整解析输入并使用 BigInt 防止算术溢出。尚无宿主验收结果，未宣称检查通过。",
+  "replay_duration_seconds": 80,
+  "replay_production_note": "Designed artifact replay; exact excerpts and labeled translations. No staged live interaction, new tests or fabricated UI. Silent with burned-in English explanatory captions."
+}

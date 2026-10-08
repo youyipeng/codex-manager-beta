@@ -10,6 +10,18 @@ Hand off one small repo task from a local ChatGPT Work chat to Codex. The local 
 
 Send your Windows setup, local Work/MCP/plugin availability, Codex sign-in status and a small task description. Do not send source or credentials. Compatible users receive the private ZIP and checksum. No checkout or payment signup.
 
+## Watch the 80-second historical replay
+
+[![Codex Manager historical repair replay](docs/assets/codex-manager-loop.gif)](https://youyipeng.github.io/codex-manager-beta/demo.html)
+
+**One failed test. Manager sent Codex back.** Natural-language task → 30/31 → `revise` and bounded repair → 31/31 → separate `accept`.
+
+[Watch the MP4](https://youyipeng.github.io/codex-manager-beta/demo.html) · [Download video](https://youyipeng.github.io/codex-manager-beta/assets/codex-manager-demo-80s.mp4) · [English subtitles](docs/assets/codex-manager-demo.en.srt) · [Source notes](demo/SOURCE-NOTES.md)
+
+Historical internal run: October 5, 2026, Stage 5.1. Designed replay of genuine artifacts, edited to 80 seconds from an 11m21s event span. Silent, with burned-in explanatory captions. The animation is a replay layout, not simulated product UI. The External Beta 16/16 result is a separate run; no customer/reliability/productivity claim.
+
+**Private Windows beta — try it on one low-risk repo.** [Request the installation kit](mailto:yipengyou72@gmail.com?subject=Codex%20Manager%20Windows%20Beta). Send your setup and a small task description; no source or secrets.
+
 ## A real failed attempt, followed by repair
 
 An internal Desktop run on October 5, 2026 began with one natural-language request for a duration parser:
@@ -18,9 +30,9 @@ An internal Desktop run on October 5, 2026 began with one natural-language reque
 
 Lint, typecheck and build also passed. The failed case concerned leading/trailing ASCII spaces. The original repo stayed unchanged; the result was a patch. [Sanitized recorded result](demo/recorded-result.json) · [Evidence scope](docs/EVIDENCE.md) · [45-second demo plan](demo/RECORDING-SCRIPT.md).
 
-This sequence was recorded on **Stage 5.1**, before beta packaging. The separately packaged External Beta demo passed **16/16 in one round**. Neither is an external customer success or a general reliability/productivity benchmark. The review is a separate call and can use the same model. A video has not yet been recorded.
+This sequence was recorded on **Stage 5.1**, before beta packaging. The separately packaged External Beta demo passed **16/16 in one round**. Neither is an external customer success or a general reliability/productivity benchmark. The review is a separate call and can use the same model. An 80-second historical artifact replay is now available, with burned-in English captions. It is assembled from real recorded logs, not a new live run.
 
-[October 8 technical walkthrough and trial request](docs/duration-parser-repair-2026-10-08.md) · [80-second recording script](demo/demo-first-80s-2026-10-08.md) · [Sanitized artifact excerpts](demo/repair-evidence-2026-10-08.json). The script is prepared; no finished video is claimed.
+[October 8 technical walkthrough and trial request](docs/duration-parser-repair-2026-10-08.md) · [80-second recording script](demo/demo-first-80s-2026-10-08.md) · [Sanitized artifact excerpts](demo/repair-evidence-2026-10-08.json). The finished replay preserves historical-run labels and links the original evidence.
 
 ## Get to a checked result with less setup
 

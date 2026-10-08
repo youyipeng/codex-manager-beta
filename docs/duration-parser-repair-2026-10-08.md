@@ -1,3 +1,5 @@
+[Watch the finished 80-second historical replay](https://youyipeng.github.io/codex-manager-beta/demo.html) · [Source notes](../demo/SOURCE-NOTES.md)
+
 # Codex Manager duration parser repair evidence
 
 On October 5, 2026, one internal Codex Manager Stage 5.1 Desktop task reached a failed acceptance check, requested a repair, and completed after the second attempt. The first implementation passed 30 of 31 tests. After feedback about leading and trailing ASCII spaces, the second passed all 31, with lint, typecheck and build also passing and a separate review returning `accept`.
@@ -41,7 +43,7 @@ The useful behavior is the link between a check failure, concrete feedback, anot
 
 The [sanitized artifact projection](../demo/repair-evidence-2026-10-08.json) contains the check records, actual review text, event timestamps and hashes of the source artifacts. Local originals were compared with the preserved source inventory on October 8; all 18 inventoried files matched. Hashes support traceability, not third-party attestation. Absolute paths, stack traces, raw screenshots, prospect records and the private runtime are excluded.
 
-See the [existing recorded summary](../demo/recorded-result.json), [evidence boundaries](EVIDENCE.md) and [80-second recording script](../demo/demo-first-80s-2026-10-08.md). The recording script is ready; a finished video has not been recorded.
+See the [existing recorded summary](../demo/recorded-result.json), [evidence boundaries](EVIDENCE.md) and [80-second recording script](../demo/demo-first-80s-2026-10-08.md). The finished 80-second historical artifact replay is available above; it is not a new live run.
 
 ## Request one free bounded trial
 

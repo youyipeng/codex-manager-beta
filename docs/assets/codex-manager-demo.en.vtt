@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+A real internal run. Historical replay, edited for length.
+
+00:00:05.000 --> 00:00:16.000
+The editable scope and mandatory checks were fixed before execution.
+
+00:00:16.000 --> 00:00:28.000
+Leading and trailing ASCII spaces: expected 7,380,000 milliseconds; the implementation returned null.
+
+00:00:28.000 --> 00:00:41.000
+Repair ASCII edge spaces. Keep rejecting newlines. Change only the permitted source file; keep the tests fixed.
+
+00:00:41.000 --> 00:00:52.000
+The second implementation strips ASCII edge spaces. This is a patch excerpt, not a new terminal run.
+
+00:00:52.000 --> 00:01:06.000
+Manager independently reran checks; a separate review accepted. A separate call can use the same model.
+
+00:01:06.000 --> 00:01:20.000
+One internal run, not a reliability benchmark. Code context goes to the model service. You review the returned patch.
