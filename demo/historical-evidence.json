@@ -247,6 +247,18 @@
   },
   "original_prompt_excerpt": "使用 Codex Manager 本地总控，在已登记的 stage5-e2e（时长工具）仓库实现 parseDuration(value)，严格遵循仓库 README 的完整功能契约，通过所有已识别并登记的验收命令。",
   "first_worker_summary": "实现 parseDuration，按 README 契约完整解析输入并使用 BigInt 防止算术溢出。尚无宿主验收结果，未宣称检查通过。",
+  "english_display_translations": {
+    "user_task": {
+      "source": "prompt.txt, first sentence",
+      "original": "使用 Codex Manager 本地总控，在已登记的 stage5-e2e（时长工具）仓库实现 parseDuration(value)，严格遵循仓库 README 的完整功能契约，通过所有已识别并登记的验收命令。",
+      "translation": "Use Codex Manager to implement parseDuration(value) in the registered stage5-e2e duration-tools repo. Follow the full README contract and pass every registered acceptance command."
+    },
+    "repair_feedback": {
+      "source": "round-1-review.json, feedback[0]",
+      "original": "仅在 src/duration.ts 内修正首尾 ASCII 空格处理，使 \"  2H  3M \" 返回 7380000，同时继续拒绝纯空格及换行。不要使用会去除换行等字符的通用 trim()。",
+      "translation": "Fix leading and trailing ASCII spaces only in src/duration.ts, so \"  2H  3M \" returns 7380000. Keep rejecting all-space input and newlines. Do not use generic trim(), which would remove newlines."
+    }
+  },
   "replay_duration_seconds": 80,
-  "replay_production_note": "Designed artifact replay; exact excerpts and labeled translations. No staged live interaction, new tests or fabricated UI. Silent with burned-in English explanatory captions."
+  "replay_production_note": "English-only designed artifact replay v2; exact test/patch excerpts and explicitly labeled English translations of the historical Chinese request/review. Original text remains in linked evidence. No staged live interaction, new tests or fabricated UI. Silent with burned-in English explanatory captions."
 }

@@ -12,13 +12,13 @@ Send your Windows setup, local Work/MCP/plugin availability, Codex sign-in statu
 
 ## Watch the 80-second historical replay
 
-[![Codex Manager historical repair replay](docs/assets/codex-manager-loop.gif)](https://youyipeng.github.io/codex-manager-beta/demo.html)
+[![Codex Manager historical repair replay](docs/assets/codex-manager-loop.gif?v=en2-b95f803e0e6f)](https://youyipeng.github.io/codex-manager-beta/demo.html)
 
 **One failed test. Manager sent Codex back.** Natural-language task → 30/31 → `revise` and bounded repair → 31/31 → separate `accept`.
 
-[Watch the MP4](https://youyipeng.github.io/codex-manager-beta/demo.html) · [Download video](https://youyipeng.github.io/codex-manager-beta/assets/codex-manager-demo-80s.mp4) · [English subtitles](docs/assets/codex-manager-demo.en.srt) · [Source notes](demo/SOURCE-NOTES.md)
+[Watch the MP4](https://youyipeng.github.io/codex-manager-beta/demo.html) · [Download video](https://youyipeng.github.io/codex-manager-beta/assets/codex-manager-demo-80s.mp4?v=en2-85c9bec5cb04) · [English subtitles](docs/assets/codex-manager-demo.en.srt) · [Source notes](demo/SOURCE-NOTES.md)
 
-Historical internal run: October 5, 2026, Stage 5.1. Designed replay of genuine artifacts, edited to 80 seconds from an 11m21s event span. Silent, with burned-in explanatory captions. The animation is a replay layout, not simulated product UI. The External Beta 16/16 result is a separate run; no customer/reliability/productivity claim.
+Historical internal run: October 5, 2026, Stage 5.1. Designed replay of genuine artifacts, edited to 80 seconds from an 11m21s event span. English-only v2, silent with burned-in explanatory captions. Request and review panels are labeled English translations; exact test/patch excerpts are unchanged. The animation is a replay layout, not simulated product UI. The External Beta 16/16 result is a separate run; no customer/reliability/productivity claim.
 
 **Private Windows beta — try it on one low-risk repo.** [Request the installation kit](mailto:yipengyou72@gmail.com?subject=Codex%20Manager%20Windows%20Beta). Send your setup and a small task description; no source or secrets.
 
